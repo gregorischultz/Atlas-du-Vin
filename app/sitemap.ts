@@ -1,42 +1,46 @@
 import type { MetadataRoute } from "next";
 import { SITE_URL } from "@/lib/site";
-import { chargerVinsPublies } from "@/lib/contenu";
-import { listeAliments } from "@/lib/accords";
-import { TYPES_VIN } from "@/lib/libelles";
+import { FAMILLES_VIN } from "@/lib/libelles";
+import { tousLesPays } from "@/lib/pays";
+import { registreVins } from "@/lib/vins-registry";
 
 /*
-  Sitemap gerado no build a partir do corpus real (secção 11).
-  Exclui /go/ (afiliação) e /kit (interno).
+  Sitemap généré au build à partir de la structure de l'Atlas.
+  Exclut /go/ (affiliation), /kit (interne) et les pages « extra » (accords,
+  recherche) hors périmètre de l'Atlas.
 */
 export default function sitemap(): MetadataRoute.Sitemap {
   const u = (chemin: string) => `${SITE_URL}${chemin}`;
+  const now = new Date();
+  const entree = (c: string) => ({ url: u(c), lastModified: now });
 
   const statiques = [
     "/",
-    "/accords",
-    "/recherche",
-    "/methode",
+    "/histoire",
+    "/experts",
+    "/glossaire",
+    "/types",
+    "/pays",
+    "/classement-mondial",
     "/mentions-legales",
     "/politique-de-confidentialite",
     "/cookies",
     "/divulgation-affiliation",
     "/contact",
-  ].map((c) => ({ url: u(c), lastModified: new Date() }));
+  ].map(entree);
 
-  const types = TYPES_VIN.map((t) => ({
-    url: u(`/vins/${t}`),
-    lastModified: new Date(),
-  }));
+  // Classements par type
+  const parType = FAMILLES_VIN.map((f) => entree(`/classements/${f}`));
 
-  const accords = listeAliments().map((a) => ({
-    url: u(`/accords/${a.slug}`),
-    lastModified: new Date(),
-  }));
+  // Pays : la fiche pays + chaque famille du pays
+  const paysSlugs = Object.keys(tousLesPays());
+  const parPays = paysSlugs.flatMap((p) => [
+    entree(`/pays/${p}`),
+    ...FAMILLES_VIN.map((f) => entree(`/pays/${p}/${f}`)),
+  ]);
 
-  const vins = chargerVinsPublies().map((v) => ({
-    url: u(`/vin/${v.slug}`),
-    lastModified: new Date(v.date_revision),
-  }));
+  // Fiches de vin (registre)
+  const vins = Object.keys(registreVins()).map((slug) => entree(`/vin/${slug}`));
 
-  return [...statiques, ...types, ...accords, ...vins];
+  return [...statiques, ...parType, ...parPays, ...vins];
 }

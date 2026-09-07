@@ -2,12 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { FilDAriane } from "@/components/FilDAriane";
 import { Carte } from "@/components/Carte";
-import paysData from "@/data/pays.json";
-
-const pays = paysData as Record<
-  string,
-  { libelle_fr: string; note_contexte: string }
->;
+import { tousLesPays } from "@/lib/pays";
 
 export const metadata: Metadata = {
   title: "Top 5 des pays producteurs — Atlas du Vin",
@@ -17,7 +12,10 @@ export const metadata: Metadata = {
 };
 
 export default function PagePays() {
-  const entrees = Object.entries(pays);
+  // Les pays classés (avec rang) d'abord, triés ; puis le reste.
+  const entrees = Object.entries(tousLesPays()).sort(
+    ([, a], [, b]) => (a.rang ?? 99) - (b.rang ?? 99),
+  );
 
   return (
     <main className="contenu py-16">
@@ -33,7 +31,17 @@ export default function PagePays() {
         {entrees.map(([slug, p]) => (
           <Link key={slug} href={`/pays/${slug}`} className="block">
             <Carte>
-              <h2 className="text-xl text-encre">{p.libelle_fr}</h2>
+              <div className="flex items-baseline justify-between gap-3">
+                <h2 className="text-xl text-encre">
+                  {p.rang ? `${p.rang}. ` : ""}
+                  {p.libelle_fr}
+                </h2>
+                {p.note_sur_10 !== undefined && (
+                  <span className="font-donnees text-sm text-lie">
+                    {p.note_sur_10.toFixed(1).replace(".", ",")}/10
+                  </span>
+                )}
+              </div>
               <p className="mt-2 text-sm text-encre-doux">{p.note_contexte}</p>
             </Carte>
           </Link>

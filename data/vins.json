@@ -1,0 +1,24 @@
+{
+  "romanee-conti": {
+    "slug": "romanee-conti",
+    "nom": "Romanée-Conti Grand Cru",
+    "producteur": "Domaine de la Romanée-Conti",
+    "pays": "france",
+    "region": "Bourgogne",
+    "appellation": "Romanée-Conti Grand Cru",
+    "famille": "rouge",
+    "cepages": ["Pinot Noir"],
+    "offres": []
+  },
+  "leroy-chambertin": {
+    "slug": "leroy-chambertin",
+    "nom": "Chambertin Grand Cru",
+    "producteur": "Domaine Leroy",
+    "pays": "france",
+    "region": "Bourgogne",
+    "appellation": "Chambertin Grand Cru",
+    "famille": "rouge",
+    "cepages": ["Pinot Noir"],
+    "offres": []
+  }
+}

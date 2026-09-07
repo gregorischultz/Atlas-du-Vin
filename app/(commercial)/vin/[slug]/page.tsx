@@ -1,26 +1,22 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
-import { MDXRemote } from "next-mdx-remote/rsc";
-import { chargerVinsPublies } from "@/lib/contenu";
-import { vinClasseParSlug } from "@/lib/classement";
-import { libelleType } from "@/lib/libelles";
-import { mdxComposants } from "@/lib/mdx-composants";
 import { FilDAriane } from "@/components/FilDAriane";
-import { Etoiles } from "@/components/Etoiles";
 import { Badge } from "@/components/Badge";
 import { Tableau } from "@/components/Tableau";
 import { BlocSanitaire } from "@/components/BlocSanitaire";
 import { DivulgationAffiliation } from "@/components/DivulgationAffiliation";
 import { BoutonOffre } from "@/components/BoutonOffre";
+import { registreVins, vinFicheParSlug } from "@/lib/vins-registry";
+import { apparitionsDuVin } from "@/lib/classements";
 import { offresVisibles } from "@/lib/offres";
-import paysData from "@/data/pays.json";
+import { libelleFamille } from "@/lib/libelles";
+import { paysParSlug } from "@/lib/pays";
 
 type Params = { slug: string };
-const pays = paysData as Record<string, { libelle_fr: string }>;
 
 export function generateStaticParams(): Params[] {
-  return chargerVinsPublies().map((v) => ({ slug: v.slug }));
+  return Object.keys(registreVins()).map((slug) => ({ slug }));
 }
 
 export async function generateMetadata({
@@ -29,11 +25,11 @@ export async function generateMetadata({
   params: Promise<Params>;
 }): Promise<Metadata> {
   const { slug } = await params;
-  const vin = vinClasseParSlug(slug);
+  const vin = vinFicheParSlug(slug);
   if (!vin) return {};
   return {
     title: `${vin.nom} — Atlas du Vin`,
-    description: vin.resume,
+    description: `${vin.nom} — ${vin.producteur}, ${vin.appellation}.`,
     alternates: { canonical: `/vin/${vin.slug}` },
   };
 }
@@ -44,32 +40,23 @@ export default async function FicheVin({
   params: Promise<Params>;
 }) {
   const { slug } = await params;
-  const vin = vinClasseParSlug(slug);
+  const vin = vinFicheParSlug(slug);
   if (!vin) notFound();
 
-  const paysLibelle = pays[vin.pays]?.libelle_fr ?? vin.pays;
+  const paysLibelle = paysParSlug(vin.pays)?.libelle_fr ?? vin.pays;
+  const apparitions = apparitionsDuVin(vin.slug);
   const offres = offresVisibles(vin.slug, vin.offres);
 
-  const ficheTechnique: [string, string | number][] = [
-    ["Type", libelleType(vin.type)],
+  const ficheTechnique: [string, string][] = [
+    ["Type", libelleFamille(vin.famille)],
     ["Cépages", vin.cepages.join(", ")],
     ["Appellation", vin.appellation],
     ["Région", `${vin.region} · ${paysLibelle}`],
-    ["Millésime", vin.millesime],
-    ["Degré", `${vin.degre.toFixed(1).replace(".", ",")} % vol`],
-    ["Prix de référence", `${vin.prix_reference_eur.toFixed(2).replace(".", ",")} €`],
-    ["Service", vin.temperature_service],
-    ["Garde", vin.garde],
-    ["Carafage", vin.carafage ? "Recommandé" : "Non nécessaire"],
-  ];
-
-  const degustation: [string, number][] = [
-    ["Corps", vin.degustation.corps],
-    ["Acidité", vin.degustation.acidite],
-    ...(vin.degustation.tanins !== null
-      ? ([["Tanins", vin.degustation.tanins]] as [string, number][])
+    ...(vin.degre !== undefined
+      ? ([
+          ["Degré", `${vin.degre.toFixed(1).replace(".", ",")} % vol`],
+        ] as [string, string][])
       : []),
-    ["Sucrosité", vin.degustation.sucrosite],
   ];
 
   return (
@@ -77,70 +64,51 @@ export default async function FicheVin({
       <FilDAriane
         miettes={[
           { libelle: "Accueil", href: "/" },
-          { libelle: libelleType(vin.type), href: `/vins/${vin.type}` },
+          {
+            libelle: libelleFamille(vin.famille),
+            href: `/classements/${vin.famille}`,
+          },
           { libelle: vin.nom },
         ]}
       />
 
       <div className="mt-6 flex flex-wrap items-center gap-3">
-        <Badge>{libelleType(vin.type)}</Badge>
+        <Badge>{libelleFamille(vin.famille)}</Badge>
         <Badge ton="lie">{paysLibelle}</Badge>
       </div>
       <h1 className="mt-4 text-4xl">{vin.nom}</h1>
       <p className="mt-2 font-donnees text-encre-doux">{vin.producteur}</p>
-      <p className="mt-4 max-w-[68ch] text-lg text-encre-doux">{vin.resume}</p>
-
-      {/* ── ZONE 1 : NOTRE CLASSEMENT (éditorial, aucun lien commercial) ── */}
-      <section className="mt-8 rounded-carafe border border-trait bg-craie p-6">
-        <div className="flex flex-wrap items-baseline justify-between gap-4">
-          <div>
-            <p className="font-donnees text-xs uppercase tracking-wide text-sauge">
-              Notre classement
-            </p>
-            <div className="mt-2 flex items-center gap-3">
-              <span className="text-3xl">
-                <Etoiles note={vin.etoiles} />
-              </span>
-              <span className="font-donnees text-lg text-encre">
-                {vin.note_qualite.toFixed(1).replace(".", ",")}/20
-              </span>
-            </div>
-          </div>
-          <Link
-            href="/methode"
-            className="font-corps text-sm text-lie underline hover:text-lie-clair"
-          >
-            Comment nous notons →
-          </Link>
-        </div>
-      </section>
 
       <div className="mt-10 grid gap-10 md:grid-cols-[2fr_1fr]">
         <div>
-          <MDXRemote source={vin.corps} components={mdxComposants} />
-        </div>
-        <aside className="space-y-8">
-          <div>
-            <h2 className="mb-3 text-xl">Fiche technique</h2>
-            <Tableau
-              entetes={["", ""]}
-              lignes={ficheTechnique.map(([k, v]) => [k, v])}
-            />
-          </div>
-          <div>
-            <h2 className="mb-3 text-xl">Dégustation</h2>
-            <Tableau
-              entetes={["Critère", "/5"]}
-              lignes={degustation.map(([k, v]) => [k, v])}
-            />
-            <p className="mt-2 font-donnees text-xs text-encre-doux">
-              Arômes : {vin.aromes.join(", ")}.
+          {/* Figure dans ces classements (éditorial, aucun lien commercial) */}
+          <h2 className="text-xl">Figure dans ces classements</h2>
+          {apparitions.length === 0 ? (
+            <p className="mt-3 text-encre-doux">
+              Ce vin n&apos;apparaît pas encore dans un classement publié.
             </p>
-          </div>
+          ) : (
+            <ul className="mt-3 space-y-2">
+              {apparitions.map((a) => (
+                <li key={a.slug}>
+                  <Link href={a.url} className="text-lie hover:underline">
+                    {a.titre} — nº {a.rang}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          )}
+        </div>
+        <aside>
+          <h2 className="mb-3 text-xl">Fiche technique</h2>
+          <Tableau
+            entetes={["", ""]}
+            lignes={ficheTechnique.map(([k, v]) => [k, v])}
+          />
         </aside>
       </div>
 
-      {/* ── ZONE 2 : OÙ ACHETER (commerce, séparé du classement) ── */}
+      {/* ── OÙ ACHETER (commerce) — divulgation + mention sanitaire au plus près ── */}
       <section className="mt-12 rounded-carafe border border-trait bg-sable p-6">
         <h2 className="text-xl">Où acheter</h2>
         <div className="mt-3">

@@ -1,0 +1,122 @@
+[
+  {
+    "slug": "aop",
+    "terme": "AOP — Appellation d'Origine Protégée",
+    "groupe": "France",
+    "definition": "Appellation d'origine protégée de l'Union européenne. Elle impose des règles précises liées à une aire géographique. Pour le vin français, c'est la catégorie d'origine la plus protégée ; elle a officiellement remplacé l'ancienne terminologie AOC dans le système européen."
+  },
+  {
+    "slug": "aoc",
+    "terme": "AOC — Appellation d'Origine Contrôlée",
+    "groupe": "France",
+    "definition": "Dénomination française traditionnelle d'origine contrôlée. Elle définit où et comment un vin peut être produit : région, cépages autorisés, rendements, méthodes de production, etc. L'AOC reste une mention très importante en France, bien qu'elle soit juridiquement intégrée à l'AOP européenne."
+  },
+  {
+    "slug": "igp",
+    "terme": "IGP — Indication Géographique Protégée",
+    "groupe": "France",
+    "definition": "Catégorie géographique moins restrictive que l'AOP/AOC. Elle laisse plus de liberté au producteur quant aux cépages et aux méthodes de production, tout en conservant un lien territorial. En France, beaucoup de vins autrefois appelés Vin de Pays sont devenus des IGP."
+  },
+  {
+    "slug": "vin-de-france",
+    "terme": "Vin de France",
+    "groupe": "France",
+    "definition": "Catégorie française sans indication géographique spécifique. Le producteur dispose d'une grande liberté de cépages, de techniques et d'assemblage, mais ne peut revendiquer une AOP/IGP précise. Important : Vin de France ne signifie pas nécessairement vin inférieur."
+  },
+  {
+    "slug": "grand-cru",
+    "terme": "Grand Cru",
+    "groupe": "France",
+    "definition": "Littéralement « grand terroir ». Désignation d'un niveau hiérarchique élevé, dont le sens change radicalement selon la région. En Bourgogne, il désigne des vignobles précis classés Grand Cru ; à Bordeaux, il peut faire partie d'un classement de propriétés, comme les Premiers Grands Crus Classés."
+  },
+  {
+    "slug": "premier-cru",
+    "terme": "Premier Cru",
+    "groupe": "France",
+    "definition": "Littéralement « premier cru ». Indique en général un niveau situé sous le Grand Cru dans les régions où les deux existent, sans signification universelle en France. En Bourgogne, par exemple, Premier Cru identifie certains climats/vignobles de haut classement."
+  },
+  {
+    "slug": "cru",
+    "terme": "Cru",
+    "groupe": "France",
+    "definition": "Signifie approximativement « croissance », mais pour le vin il désigne une unité de terroir ou une propriété reconnue pour sa qualité et son histoire. Le concept est particulièrement important en France. Cru ne recouvre pas automatiquement la même réalité à Bordeaux, en Bourgogne, en Champagne ou dans le Beaujolais."
+  },
+  {
+    "slug": "doc-italie",
+    "terme": "DOC — Denominazione di Origine Controllata",
+    "groupe": "Italie",
+    "definition": "Catégorie italienne d'origine contrôlée. Elle définit une zone géographique et des règles de production : cépages, rendement, degré alcoolique et techniques autorisées."
+  },
+  {
+    "slug": "docg",
+    "terme": "DOCG — Denominazione di Origine Controllata e Garantita",
+    "groupe": "Italie",
+    "definition": "Niveau italien traditionnellement considéré comme supérieur au DOC. Outre les exigences de production, il ajoute un système de contrôle et de certification. Exemples célèbres : Barolo DOCG, Barbaresco DOCG, Brunello di Montalcino DOCG."
+  },
+  {
+    "slug": "igt",
+    "terme": "IGT — Indicazione Geografica Tipica",
+    "groupe": "Italie",
+    "definition": "Catégorie italienne correspondant, en gros, à la logique d'une indication géographique plus souple. Elle laisse plus de liberté au producteur. Certains célèbres Super Tuscans utilisent ou ont utilisé l'IGT parce que leurs assemblages ne rentraient pas dans les règles des dénominations locales."
+  },
+  {
+    "slug": "do",
+    "terme": "DO — Denominación de Origen",
+    "groupe": "Espagne",
+    "definition": "Système espagnol de dénomination d'origine. Il définit un territoire et des règles de production. Rioja DO et Rías Baixas DO en sont des exemples connus."
+  },
+  {
+    "slug": "doca",
+    "terme": "DOCa — Denominación de Origen Calificada",
+    "groupe": "Espagne",
+    "definition": "Catégorie espagnole d'exigence et de reconnaissance supérieure au sein du système traditionnel des dénominations. Aujourd'hui, Rioja et Priorat sont les deux DOCa espagnoles."
+  },
+  {
+    "slug": "vino-de-pago",
+    "terme": "Vino de Pago (VP)",
+    "groupe": "Espagne",
+    "definition": "L'une des classifications les plus particulières d'Espagne. Elle désigne une propriété ou un vignoble individuel officiellement reconnu pour des caractéristiques exceptionnelles, pouvant disposer de sa propre dénomination. Une classification essentielle pour comprendre certains grands vins espagnols."
+  },
+  {
+    "slug": "crianza",
+    "terme": "Crianza",
+    "groupe": "Espagne",
+    "definition": "Indique une période minimale réglementée de vieillissement avant la commercialisation. Cela ne signifie pas simplement « vin jeune » ou « vin inférieur ». Les exigences exactes varient selon la catégorie et la réglementation espagnole."
+  },
+  {
+    "slug": "reserva",
+    "terme": "Reserva",
+    "groupe": "Espagne",
+    "definition": "Indique des exigences de vieillissement supérieures à celles de la Crianza. À Rioja, par exemple, cela implique des durées minimales précises en fût et en bouteille. C'est une classification réglementaire de vieillissement, pas un jugement subjectif de qualité."
+  },
+  {
+    "slug": "gran-reserva",
+    "terme": "Gran Reserva",
+    "groupe": "Espagne",
+    "definition": "Niveau de vieillissement encore plus élevé que la Reserva dans certaines dénominations espagnoles. Les exigences varient selon la région et le type de vin."
+  },
+  {
+    "slug": "pradikatswein",
+    "terme": "Prädikatswein",
+    "groupe": "Allemagne",
+    "definition": "Catégorie allemande de vins de qualité à prédicats, fondés surtout sur le degré de maturité et de sucre du raisin à la récolte, et non simplement sur le sucre résiduel du vin. On y trouve, par ordre croissant : Kabinett, Spätlese, Auslese, Beerenauslese, Eiswein, Trockenbeerenauslese. C'est essentiel pour comprendre les grands Rieslings allemands."
+  },
+  {
+    "slug": "doc-portugal",
+    "terme": "DOC — Denominação de Origem Controlada",
+    "groupe": "Portugal",
+    "definition": "Principal système portugais de dénomination d'origine. Il définit des régions et des règles de production spécifiques. Exemples : Douro DOC, Dão DOC, Bairrada DOC, Vinho Verde DOC."
+  },
+  {
+    "slug": "gi",
+    "terme": "Dénomination d'origine / GI — Indication géographique",
+    "groupe": "International",
+    "definition": "Concepts fondamentaux du système européen. L'idée centrale : le territoire est juridiquement associé à l'identité et aux caractéristiques du produit. L'AOP/DOP correspond à un niveau de protection plus strict ; l'IGP/GI laisse plus de souplesse."
+  },
+  {
+    "slug": "vintage-nv",
+    "terme": "Vintage / NV — Non-Vintage",
+    "groupe": "International",
+    "definition": "Pas exactement une classification de qualité, mais un terme technique fondamental, surtout en Champagne et à Porto. Vintage = le vin est associé à un millésime précis. NV (Non-Vintage) = il est élaboré à partir de vins de différents millésimes. En Champagne, un Vintage traduit en général une déclaration de millésime exceptionnel ; le NV est la base de production des grandes maisons."
+  }
+]

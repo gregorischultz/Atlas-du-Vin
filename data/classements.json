@@ -1,0 +1,12 @@
+{
+  "mondial": {
+    "titre": "Top 10 des meilleurs vins du monde",
+    "portee": "mondial"
+  },
+  "rouge-meilleurs": {
+    "titre": "Rouges — les meilleurs",
+    "portee": "type",
+    "famille": "rouge",
+    "categorie": "meilleurs"
+  }
+}

@@ -1,0 +1,82 @@
+[
+  {
+    "slug": "jancis-robinson",
+    "nom": "Jancis Robinson MW",
+    "nationalite": ["Royaume-Uni"],
+    "accroche": "Probablement la plus grande autorité générale du vin encore en activité.",
+    "description": "Master of Wine depuis 1984, éditrice de l'Oxford Companion to Wine, coautrice du World Atlas of Wine et de Wine Grapes. Ces ouvrages sont des références internationales.",
+    "specialite": "Connaissance globale et systématisation du vin."
+  },
+  {
+    "slug": "robert-parker",
+    "nom": "Robert M. Parker Jr.",
+    "nationalite": ["États-Unis"],
+    "accroche": "Le critique ayant sans doute eu la plus grande influence commerciale de l'histoire moderne du vin.",
+    "description": "Il a créé le système de notation sur 100 points utilisé par le Wine Advocate. Ce système a profondément modifié la manière dont consommateurs, négociants et producteurs évaluent le vin.",
+    "specialite": "Critique et évaluation des vins."
+  },
+  {
+    "slug": "michael-broadbent",
+    "nom": "Michael Broadbent MW",
+    "nationalite": ["Royaume-Uni"],
+    "accroche": "Une véritable légende.",
+    "description": "Master of Wine en 1960, il crée ensuite le département des vins de Christie's et devient l'une des figures les plus importantes du commerce et de la collection de vins fins. Il a produit une quantité extraordinaire de notes de dégustation tout au long de sa vie.",
+    "specialite": "Vins anciens, dégustation et histoire."
+  },
+  {
+    "slug": "hugh-johnson",
+    "nom": "Hugh Johnson",
+    "nationalite": ["Royaume-Uni"],
+    "accroche": "L'un des plus grands auteurs de vin de tous les temps.",
+    "description": "Son livre Wine paraît en 1966 ; il devient l'un des auteurs de vin les plus importants et influents au monde.",
+    "specialite": "Histoire, régions et communication autour du vin."
+  },
+  {
+    "slug": "emile-peynaud",
+    "nom": "Émile Peynaud",
+    "nationalite": ["France"],
+    "accroche": "Ici, une différence fondamentale.",
+    "description": "Peynaud n'était pas avant tout un critique : il fut l'un des plus grands œnologues de l'histoire. Souvent appelé « père de l'œnologie moderne », il a eu une influence considérable sur la transformation de la vinification, en particulier à Bordeaux.",
+    "specialite": "Science et production du vin."
+  },
+  {
+    "slug": "serena-sutcliffe",
+    "nom": "Serena Sutcliffe MW",
+    "nationalite": ["Royaume-Uni"],
+    "accroche": "L'une des plus grandes autorités mondiales en vins fins.",
+    "description": "Responsable mondiale du département des vins de Sotheby's pendant 25 ans, elle est Master of Wine. Sotheby's la décrit elle-même comme l'une des principales autorités mondiales du vin.",
+    "specialite": "Grands vins, Bordeaux, Bourgogne et marché des vins fins."
+  },
+  {
+    "slug": "steven-spurrier",
+    "nom": "Steven Spurrier",
+    "nationalite": ["Royaume-Uni"],
+    "accroche": "Sa place dans l'histoire tient surtout à un événement : le Jugement de Paris de 1976.",
+    "description": "Il a organisé la dégustation qui opposa des vins californiens aux grands vins français, à l'aveugle — un événement qui a transformé l'industrie mondiale du vin.",
+    "specialite": "Critique, éducation et promotion internationale du vin."
+  },
+  {
+    "slug": "clive-coates",
+    "nom": "Clive Coates MW",
+    "nationalite": ["Royaume-Uni"],
+    "accroche": "Sur la Bourgogne, il monte encore plus haut dans cette liste.",
+    "description": "Master of Wine et auteur de certains des ouvrages les plus importants jamais écrits sur la Bourgogne. Son travail a documenté en profondeur l'évolution des grands domaines et terroirs de la région.",
+    "specialite": "Bourgogne."
+  },
+  {
+    "slug": "andre-simon",
+    "nom": "André L. Simon",
+    "nationalite": ["France", "Royaume-Uni"],
+    "accroche": "Une figure historique majeure.",
+    "description": "Négociant, écrivain, historien et fondateur de la Wine & Food Society, devenue plus tard l'International Wine & Food Society. Il a écrit plus de 100 livres et brochures sur le vin et la cuisine.",
+    "specialite": "Histoire, culture et littérature du vin."
+  },
+  {
+    "slug": "karen-macneil",
+    "nom": "Karen MacNeil",
+    "nationalite": ["États-Unis"],
+    "accroche": "L'une des plus grandes éducatrices du vin de l'ère moderne.",
+    "description": "Autrice de The Wine Bible, vendu à plus d'un million d'exemplaires, elle est l'une des principales artisanes de la diffusion d'un savoir technique sur le vin auprès du grand public.",
+    "specialite": "Éducation et communication."
+  }
+]

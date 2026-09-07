@@ -1,0 +1,18 @@
+[
+  {
+    "slug": "rouge",
+    "nom": "Rouge",
+    "essence": "Style obtenu par macération des peaux de raisins noirs, qui extrait couleur, tanins et composés aromatiques. Il va du très léger et délicat au très corsé, puissant et de longue garde. Les écarts entre Pinot Noir, Nebbiolo et Tempranillo y sont considérables.",
+    "meilleur_pays": "France",
+    "meilleure_region": "Bordeaux",
+    "note": "Si le critère est l'ensemble historique des grands rouges, la longévité et la réputation. Pour le Pinot Noir : Bourgogne ; le Nebbiolo : Piémont ; le Tempranillo : Rioja / Ribera del Duero."
+  },
+  {
+    "slug": "rose",
+    "nom": "Rosé",
+    "essence": "Style situé entre l'univers des rouges et des blancs : fraîcheur et légèreté, mais plus de structure et de fruit que bien des blancs. La couleur provient d'un contact court du moût avec les peaux de raisins noirs. Il existe des rosés très pâles et d'autres plus foncés et structurés.",
+    "meilleur_pays": "France",
+    "meilleure_region": "Provence",
+    "note": "Pour le style de rosé sec, pâle et frais, la Provence est la référence."
+  }
+]

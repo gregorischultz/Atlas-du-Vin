@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { SITE_NOM } from "@/lib/site";
-import { TYPES_VIN, libelleType } from "@/lib/libelles";
+import { FAMILLES_VIN, libelleFamille } from "@/lib/libelles";
 import { MenuPrincipal, type ArbreMenu } from "@/components/MenuPrincipal";
 import paysData from "@/data/pays.json";
 
@@ -16,9 +16,9 @@ const arbre: ArbreMenu = {
     { href: "/types", libelle: "Les 6 types de vin" },
     { href: "/glossaire", libelle: "Termes techniques" },
   ],
-  parType: TYPES_VIN.map((t) => ({
-    href: `/vins/${t}`,
-    libelle: libelleType(t),
+  parType: FAMILLES_VIN.map((f) => ({
+    href: `/classements/${f}`,
+    libelle: libelleFamille(f),
   })),
   parPays: Object.entries(pays).map(([slug, p]) => ({
     href: `/pays/${slug}`,

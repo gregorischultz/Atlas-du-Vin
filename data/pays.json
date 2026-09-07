@@ -1,11 +1,38 @@
 {
   "france": {
     "libelle_fr": "France",
-    "note_contexte": "Premier vignoble du monde en valeur, référence des appellations."
+    "note_contexte": "Premier vignoble du monde en valeur, référence des appellations.",
+    "rang": 1,
+    "note_sur_10": 10,
+    "regions": [
+      "Bordeaux",
+      "Bourgogne",
+      "Champagne",
+      "Sauternes",
+      "Rhône",
+      "Loire",
+      "Alsace",
+      "Provence",
+      "Jura"
+    ],
+    "pourquoi": "La France produit des vins de premier plan dans presque toutes les grandes catégories. En 2026, elle a de nouveau dominé le DWWA avec 254 médailles, dont 42 Platinum et 16 Best in Show."
   },
   "italie": {
     "libelle_fr": "Italie",
-    "note_contexte": "Diversité de cépages autochtones exceptionnelle."
+    "note_contexte": "Diversité de cépages autochtones exceptionnelle.",
+    "rang": 2,
+    "note_sur_10": 9.7,
+    "regions": [
+      "Piémont",
+      "Toscane",
+      "Vénétie",
+      "Alto Adige",
+      "Friuli",
+      "Etna",
+      "Sicile",
+      "Franciacorta"
+    ],
+    "pourquoi": "Sa force principale est une diversité de cépages et de terroirs considérable. En 2026, elle suit la France dans les grands résultats du DWWA, avec 29 Platinum."
   },
   "espagne": {
     "libelle_fr": "Espagne",
