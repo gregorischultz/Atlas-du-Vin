@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { MDXRemote } from "next-mdx-remote/rsc";
-import { FilDAriane } from "@/components/FilDAriane";
+import { EnTeteSection } from "@/components/EnTeteSection";
 import { mdxComposants } from "@/lib/mdx-composants";
 import { chargerPage } from "@/lib/pages";
 
@@ -16,16 +16,14 @@ export default function PageHistoire() {
 
   return (
     <main className="contenu py-16">
-      <FilDAriane
+      <EnTeteSection
         miettes={[
           { libelle: "Accueil", href: "/" },
           { libelle: "Histoire du Vin" },
         ]}
+        surtitre="Guide"
+        titre="Histoire du Vin"
       />
-      <p className="mt-4 font-donnees text-sm uppercase tracking-wide text-sauge">
-        Atlas du Vin
-      </p>
-      <h1 className="mt-3 text-4xl">Histoire du Vin</h1>
 
       <div className="prose-atlas mt-8 max-w-[72ch] text-lg text-encre-doux">
         {page ? (

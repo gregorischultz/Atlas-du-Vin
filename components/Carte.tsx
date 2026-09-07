@@ -12,7 +12,9 @@ type CarteProps = {
 export function Carte({ children, ton = "papier" }: CarteProps) {
   const fundo = ton === "sable" ? "bg-sable" : "bg-papier";
   return (
-    <div className={`${fundo} rounded-carafe border border-trait p-6`}>
+    <div
+      className={`${fundo} h-full rounded-carafe border border-trait p-6 transition-colors duration-200 hover:border-lie/60`}
+    >
       {children}
     </div>
   );

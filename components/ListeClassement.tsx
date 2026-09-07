@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import { Carte } from "@/components/Carte";
 import { Badge } from "@/components/Badge";
@@ -32,26 +33,45 @@ export function ListeClassement({
         return (
           <li key={entree.vin}>
             <Carte>
-              <div className="flex flex-wrap items-baseline gap-3">
-                <span className="font-donnees text-2xl text-lie">
-                  {entree.rang}
+              <div className="grid grid-cols-[auto_1fr] gap-x-5">
+                {/* Numéro de rang — grand chiffre sérif, plaque de musée */}
+                <span
+                  className="font-titres text-4xl leading-none text-lie/80 md:text-5xl"
+                  aria-hidden
+                >
+                  {String(entree.rang).padStart(2, "0")}
                 </span>
-                <h3 className="text-2xl text-encre">{vin.nom}</h3>
-                {entree.highlight && <Badge ton="lie">{entree.highlight}</Badge>}
-              </div>
-              <p className="mt-1 font-donnees text-sm text-encre-doux">
-                {vin.producteur} · {vin.region} — {vin.cepages.join(", ")}
-              </p>
-              {(entree.etoiles_qp || entree.prix_indicatif) && (
-                <p className="mt-2 flex flex-wrap items-center gap-3 font-donnees text-sm">
-                  {entree.etoiles_qp && <Etoiles note={entree.etoiles_qp} />}
-                  {entree.prix_indicatif && (
-                    <span className="text-encre">{entree.prix_indicatif}</span>
+                <div>
+                  <div className="flex flex-wrap items-baseline gap-3">
+                    <h3 className="text-2xl text-encre">
+                      <Link
+                        href={`/vin/${entree.vin}`}
+                        className="hover:text-lie"
+                      >
+                        {vin.nom}
+                      </Link>
+                    </h3>
+                    {entree.highlight && (
+                      <Badge ton="lie">{entree.highlight}</Badge>
+                    )}
+                  </div>
+                  <p className="mt-1 font-donnees text-sm text-encre-doux">
+                    {vin.producteur} · {vin.region} — {vin.cepages.join(", ")}
+                  </p>
+                  {(entree.etoiles_qp || entree.prix_indicatif) && (
+                    <p className="mt-2 flex flex-wrap items-center gap-3 font-donnees text-sm">
+                      {entree.etoiles_qp && <Etoiles note={entree.etoiles_qp} />}
+                      {entree.prix_indicatif && (
+                        <span className="text-encre">
+                          {entree.prix_indicatif}
+                        </span>
+                      )}
+                    </p>
                   )}
-                </p>
-              )}
-              <div className="prose-atlas mt-4 text-encre-doux">
-                <MDXRemote source={entree.corps} components={mdxComposants} />
+                  <div className="prose-atlas mt-4 text-encre-doux">
+                    <MDXRemote source={entree.corps} components={mdxComposants} />
+                  </div>
+                </div>
               </div>
             </Carte>
           </li>

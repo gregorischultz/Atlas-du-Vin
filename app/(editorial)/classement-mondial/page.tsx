@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { FilDAriane } from "@/components/FilDAriane";
+import { EnTeteSection } from "@/components/EnTeteSection";
 import { ListeClassement } from "@/components/ListeClassement";
 import { classementParSlug } from "@/lib/classements";
 
@@ -17,16 +17,14 @@ export default function PageClassementMondial() {
 
   return (
     <main className="contenu py-16">
-      <FilDAriane
+      <EnTeteSection
         miettes={[
           { libelle: "Accueil", href: "/" },
           { libelle: "Top 10 mondial" },
         ]}
+        surtitre="Le classement général"
+        titre={classement.titre}
       />
-      <p className="mt-4 font-donnees text-sm uppercase tracking-wide text-sauge">
-        Atlas du Vin
-      </p>
-      <h1 className="mt-3 text-4xl">{classement.titre}</h1>
 
       <div className="mt-10">
         <ListeClassement classement={classement} />

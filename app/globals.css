@@ -65,6 +65,69 @@
     line-height: 1.15;
     text-wrap: balance;
   }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* Sélection — identité de la maison */
+  ::selection {
+    background-color: var(--color-lie);
+    color: var(--color-craie);
+  }
+
+  /* Focus visible — accessibilité + finition */
+  :focus-visible {
+    outline: 2px solid var(--color-lie);
+    outline-offset: 2px;
+    border-radius: 1px;
+  }
+
+  /* Transitions douces par défaut sur les éléments interactifs */
+  a,
+  button {
+    transition:
+      color 0.2s ease,
+      background-color 0.2s ease,
+      border-color 0.2s ease,
+      opacity 0.2s ease;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    * {
+      animation-duration: 0.001ms !important;
+      transition-duration: 0.001ms !important;
+    }
+  }
+}
+
+/* Animations sobres (menu, apparition de contenu) */
+@keyframes atlas-apparition {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@utility apparition {
+  animation: atlas-apparition 0.35s ease both;
+}
+@keyframes atlas-fondu {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@utility fondu {
+  animation: atlas-fondu 0.25s ease both;
 }
 
 /* Utilitário: contentor central 1120px com padding lateral em mobile */
@@ -72,4 +135,83 @@
   max-width: var(--container-carafe);
   margin-inline: auto;
   padding-inline: 20px;
+}
+
+/*
+  prose-atlas — rythme éditorial pour la prose MDX (introductions, histoire,
+  entrées de classement). N'utilise que les tokens existants.
+*/
+@layer components {
+  .prose-atlas > * + * {
+    margin-top: 1em;
+  }
+  .prose-atlas a {
+    color: var(--color-lie);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    text-decoration-thickness: 1px;
+  }
+  .prose-atlas a:hover {
+    color: var(--color-lie-clair);
+  }
+  .prose-atlas h2 {
+    font-family: var(--font-titres);
+    font-size: var(--text-2xl);
+    color: var(--color-encre);
+    margin-top: 1.6em;
+  }
+  .prose-atlas h3 {
+    font-family: var(--font-titres);
+    font-size: var(--text-xl);
+    color: var(--color-encre);
+    margin-top: 1.3em;
+  }
+  .prose-atlas ul {
+    list-style: disc;
+    padding-left: 1.25em;
+  }
+  .prose-atlas ol {
+    list-style: decimal;
+    padding-left: 1.25em;
+  }
+  .prose-atlas li + li {
+    margin-top: 0.25em;
+  }
+  .prose-atlas strong {
+    color: var(--color-encre);
+    font-weight: 600;
+  }
+
+  /*
+    Filet orné — divisor editorial discreto (loi Évin ok : puro ornamento).
+    Uma linha fina com um losango central. Uso: <hr class="filet-orne" /> ou
+    <div class="filet-orne" />.
+  */
+  .filet-orne {
+    border: 0;
+    height: 1px;
+    background: var(--color-trait);
+    position: relative;
+    margin-block: 2.5rem;
+  }
+  .filet-orne::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 6px;
+    height: 6px;
+    transform: translate(-50%, -50%) rotate(45deg);
+    background: var(--color-craie);
+    border: 1px solid var(--color-lie);
+  }
+}
+
+/* Titres de section « suréminents » — petit filet sous les eyebrows */
+@utility eyebrow {
+  font-family: var(--font-donnees);
+  font-size: var(--text-sm);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--color-sauge);
 }

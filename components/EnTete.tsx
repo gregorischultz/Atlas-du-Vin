@@ -32,9 +32,12 @@ const arbre: ArbreMenu = {
  */
 export function EnTete() {
   return (
-    <header className="border-b border-trait bg-craie/90 backdrop-blur-sm">
+    <header className="sticky top-0 z-30 border-b border-trait bg-craie/85 backdrop-blur-md">
       <div className="contenu flex items-center justify-between py-4">
-        <Link href="/" className="font-titres text-2xl text-lie">
+        <Link
+          href="/"
+          className="font-titres text-2xl tracking-tight text-lie hover:text-lie-clair"
+        >
           {SITE_NOM}
         </Link>
         <MenuPrincipal arbre={arbre} />

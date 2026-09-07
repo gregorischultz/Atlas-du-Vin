@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { FilDAriane } from "@/components/FilDAriane";
+import { EnTeteSection } from "@/components/EnTeteSection";
 import { Carte } from "@/components/Carte";
 import { listeTypesGuide } from "@/lib/types-guide";
 
@@ -15,16 +15,15 @@ export default function PageTypes() {
 
   return (
     <main className="contenu py-16">
-      <FilDAriane
-        miettes={[{ libelle: "Accueil", href: "/" }, { libelle: "Types de vin" }]}
+      <EnTeteSection
+        miettes={[
+          { libelle: "Accueil", href: "/" },
+          { libelle: "Types de vin" },
+        ]}
+        surtitre="Guide"
+        titre="Les 6 principaux types de vin"
+        chapeau="L'essence de chaque style, et son pays et sa région de référence."
       />
-      <p className="mt-4 font-donnees text-sm uppercase tracking-wide text-sauge">
-        Atlas du Vin
-      </p>
-      <h1 className="mt-3 text-4xl">Les 6 principaux types de vin</h1>
-      <p className="mt-4 max-w-[60ch] text-lg text-encre-doux">
-        L&apos;essence de chaque style, et son pays et sa région de référence.
-      </p>
 
       <div className="mt-10 grid gap-4 md:grid-cols-2">
         {types.map((t) => (

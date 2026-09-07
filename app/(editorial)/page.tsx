@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import { Carte } from "@/components/Carte";
+import { CadreImage } from "@/components/CadreImage";
 import { mdxComposants } from "@/lib/mdx-composants";
 import { chargerPage } from "@/lib/pages";
 import { SITE_BASELINE } from "@/lib/site";
@@ -22,24 +23,26 @@ export default function Home() {
   return (
     <main>
       {/* Hero — l'introduction (MDX) sera déposée dans content/pages/accueil.mdx */}
-      <section className="border-b border-trait">
-        <div className="contenu py-20">
-          <p className="font-donnees text-sm uppercase tracking-wide text-sauge">
-            Atlas du Vin
-          </p>
-          <h1 className="mt-4 max-w-[20ch] text-4xl leading-tight">
-            {SITE_BASELINE}
-          </h1>
-          <div className="prose-atlas mt-6 max-w-[68ch] text-lg text-encre-doux">
-            {intro ? (
-              <MDXRemote source={intro.corps} components={mdxComposants} />
-            ) : (
-              <p className="font-donnees text-sm">
-                Introduction en préparation — le contenu sera publié
-                prochainement.
-              </p>
-            )}
+      <section className="border-b border-trait bg-papier">
+        <div className="contenu grid gap-12 py-20 lg:grid-cols-[1.4fr_1fr] lg:items-center">
+          <div>
+            <p className="eyebrow">L&apos;atlas du vin</p>
+            <h1 className="mt-5 max-w-[16ch] text-4xl leading-[1.05]">
+              {SITE_BASELINE}
+            </h1>
+            <div className="filet-orne max-w-[8rem] !mx-0" />
+            <div className="prose-atlas max-w-[60ch] text-lg text-encre-doux">
+              {intro ? (
+                <MDXRemote source={intro.corps} components={mdxComposants} />
+              ) : (
+                <p className="font-donnees text-sm">
+                  Introduction en préparation — le contenu sera publié
+                  prochainement.
+                </p>
+              )}
+            </div>
           </div>
+          <CadreImage ratio="3 / 4" />
         </div>
       </section>
 
@@ -48,9 +51,14 @@ export default function Home() {
         <h2 className="text-2xl text-lie">Explorer l&apos;Atlas</h2>
         <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {sections.map((s) => (
-            <Link key={s.href} href={s.href} className="block">
+            <Link key={s.href} href={s.href} className="group block">
               <Carte>
-                <h3 className="text-xl text-encre">{s.titre}</h3>
+                <h3 className="flex items-center justify-between text-xl text-encre">
+                  {s.titre}
+                  <span className="text-lie transition-transform duration-200 group-hover:translate-x-1">
+                    →
+                  </span>
+                </h3>
                 <p className="mt-2 text-sm text-encre-doux">{s.desc}</p>
               </Carte>
             </Link>

@@ -38,24 +38,25 @@ export default async function PagePaysDetail({
 
   return (
     <main className="contenu py-16">
-      <FilDAriane
-        miettes={[
-          { libelle: "Accueil", href: "/" },
-          { libelle: "Pays", href: "/pays" },
-          { libelle: p.libelle_fr },
-        ]}
-      />
-      <p className="mt-4 font-donnees text-sm uppercase tracking-wide text-sauge">
-        Rangs par pays
-      </p>
-      <div className="mt-3 flex flex-wrap items-baseline gap-3">
-        <h1 className="text-4xl">{p.libelle_fr}</h1>
-        {p.note_sur_10 !== undefined && (
-          <span className="font-donnees text-lg text-lie">
-            {p.note_sur_10.toFixed(1).replace(".", ",")}/10
-          </span>
-        )}
-      </div>
+      <header className="apparition">
+        <FilDAriane
+          miettes={[
+            { libelle: "Accueil", href: "/" },
+            { libelle: "Pays", href: "/pays" },
+            { libelle: p.libelle_fr },
+          ]}
+        />
+        <p className="eyebrow mt-6">Classements par pays</p>
+        <div className="mt-3 flex flex-wrap items-baseline gap-4">
+          <h1 className="text-3xl md:text-4xl">{p.libelle_fr}</h1>
+          {p.note_sur_10 !== undefined && (
+            <span className="font-donnees text-lg text-lie">
+              {p.note_sur_10.toFixed(1).replace(".", ",")}/10
+            </span>
+          )}
+        </div>
+        <div className="filet-orne w-28" />
+      </header>
 
       {p.pourquoi && (
         <p className="mt-4 max-w-[68ch] text-lg text-encre-doux">{p.pourquoi}</p>

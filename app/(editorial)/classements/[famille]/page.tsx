@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { FilDAriane } from "@/components/FilDAriane";
+import { EnTeteSection } from "@/components/EnTeteSection";
 import { ListeClassement } from "@/components/ListeClassement";
 import { FAMILLES_VIN, libelleFamille, estFamilleValide } from "@/lib/libelles";
 import { classementsParFamille } from "@/lib/classements";
@@ -66,17 +66,15 @@ export default async function PageClassementFamille({
 
   return (
     <main className="contenu py-16">
-      <FilDAriane
+      <EnTeteSection
         miettes={[
           { libelle: "Accueil", href: "/" },
           { libelle: "Classements par type" },
           { libelle: nom },
         ]}
+        surtitre="Classements par type"
+        titre={nom}
       />
-      <p className="mt-4 font-donnees text-sm uppercase tracking-wide text-sauge">
-        Classements par type
-      </p>
-      <h1 className="mt-3 text-4xl">{nom}</h1>
 
       <div className="mt-12 space-y-16">
         <SectionClassement titre="Les meilleurs" classement={meilleurs} />

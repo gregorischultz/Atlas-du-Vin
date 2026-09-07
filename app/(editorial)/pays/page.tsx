@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { FilDAriane } from "@/components/FilDAriane";
+import { EnTeteSection } from "@/components/EnTeteSection";
 import { Carte } from "@/components/Carte";
 import { tousLesPays } from "@/lib/pays";
 
@@ -19,13 +19,12 @@ export default function PagePays() {
 
   return (
     <main className="contenu py-16">
-      <FilDAriane
+      <EnTeteSection
         miettes={[{ libelle: "Accueil", href: "/" }, { libelle: "Pays" }]}
+        surtitre="Guide"
+        titre="Top 5 des pays producteurs"
+        chapeau="Les grands pays du vin, région par région."
       />
-      <p className="mt-4 font-donnees text-sm uppercase tracking-wide text-sauge">
-        Atlas du Vin
-      </p>
-      <h1 className="mt-3 text-4xl">Top 5 des pays producteurs</h1>
 
       <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
         {entrees.map(([slug, p]) => (

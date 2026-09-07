@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { FilDAriane } from "@/components/FilDAriane";
+import { EnTeteSection } from "@/components/EnTeteSection";
 import { ListeClassement } from "@/components/ListeClassement";
 import { tousLesPays, paysParSlug } from "@/lib/pays";
 import { FAMILLES_VIN, libelleFamille, estFamilleValide } from "@/lib/libelles";
@@ -70,18 +70,16 @@ export default async function PagePaysFamille({
 
   return (
     <main className="contenu py-16">
-      <FilDAriane
+      <EnTeteSection
         miettes={[
           { libelle: "Accueil", href: "/" },
           { libelle: "Pays", href: "/pays" },
           { libelle: p.libelle_fr, href: `/pays/${slug}` },
           { libelle: nom },
         ]}
+        surtitre={p.libelle_fr}
+        titre={nom}
       />
-      <p className="mt-4 font-donnees text-sm uppercase tracking-wide text-sauge">
-        {p.libelle_fr}
-      </p>
-      <h1 className="mt-3 text-4xl">{nom}</h1>
 
       <div className="mt-12 space-y-16">
         <SectionClassement titre="Les meilleurs" classement={meilleurs} />

@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import { FilDAriane } from "@/components/FilDAriane";
 import { Badge } from "@/components/Badge";
+import { CadreImage } from "@/components/CadreImage";
 import { Tableau } from "@/components/Tableau";
 import { BlocSanitaire } from "@/components/BlocSanitaire";
 import { DivulgationAffiliation } from "@/components/DivulgationAffiliation";
@@ -99,12 +100,15 @@ export default async function FicheVin({
             </ul>
           )}
         </div>
-        <aside>
-          <h2 className="mb-3 text-xl">Fiche technique</h2>
-          <Tableau
-            entetes={["", ""]}
-            lignes={ficheTechnique.map(([k, v]) => [k, v])}
-          />
+        <aside className="space-y-8">
+          <CadreImage ratio="3 / 4" etiquette={vin.nom} />
+          <div>
+            <h2 className="mb-3 text-xl">Fiche technique</h2>
+            <Tableau
+              entetes={["", ""]}
+              lignes={ficheTechnique.map(([k, v]) => [k, v])}
+            />
+          </div>
         </aside>
       </div>
 
