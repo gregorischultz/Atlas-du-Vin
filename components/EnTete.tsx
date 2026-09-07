@@ -1,15 +1,34 @@
 import Link from "next/link";
 import { SITE_NOM } from "@/lib/site";
+import { TYPES_VIN, libelleType } from "@/lib/libelles";
+import { MenuPrincipal, type ArbreMenu } from "@/components/MenuPrincipal";
+import paysData from "@/data/pays.json";
 
-const liens = [
-  { href: "/vins/rouge-sec", libelle: "Vins" },
-  { href: "/accords", libelle: "Accords" },
-  { href: "/methode", libelle: "Méthode" },
-  { href: "/recherche", libelle: "Recherche" },
-];
+const pays = paysData as Record<string, { libelle_fr: string }>;
+
+// Arbre de navigation, calculé côté serveur puis passé au panneau client.
+const arbre: ArbreMenu = {
+  guide: [
+    { href: "/histoire", libelle: "Histoire du Vin" },
+    { href: "/pays", libelle: "Top 5 des pays" },
+    { href: "/experts", libelle: "Les 10 experts" },
+    { href: "/classement-mondial", libelle: "Top 10 mondial" },
+    { href: "/types", libelle: "Les 6 types de vin" },
+    { href: "/glossaire", libelle: "Termes techniques" },
+  ],
+  parType: TYPES_VIN.map((t) => ({
+    href: `/vins/${t}`,
+    libelle: libelleType(t),
+  })),
+  parPays: Object.entries(pays).map(([slug, p]) => ({
+    href: `/pays/${slug}`,
+    libelle: p.libelle_fr,
+  })),
+};
 
 /**
- * EnTete — cabeçalho de navegação, presente em todas as páginas.
+ * EnTete — cabeçalho presente em todas as páginas. O menu « trois traits » é a
+ * principal ferramenta de navegação de l'Atlas.
  */
 export function EnTete() {
   return (
@@ -18,17 +37,7 @@ export function EnTete() {
         <Link href="/" className="font-titres text-2xl text-lie">
           {SITE_NOM}
         </Link>
-        <nav className="flex gap-6 font-corps text-base">
-          {liens.map((lien) => (
-            <Link
-              key={lien.href}
-              href={lien.href}
-              className="text-encre hover:text-lie"
-            >
-              {lien.libelle}
-            </Link>
-          ))}
-        </nav>
+        <MenuPrincipal arbre={arbre} />
       </div>
     </header>
   );

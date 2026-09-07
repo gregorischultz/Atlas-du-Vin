@@ -3,7 +3,7 @@ import { Fragment } from "react";
 import { SITE_URL } from "@/lib/site";
 import { DonneesStructurees } from "@/components/DonneesStructurees";
 
-type Miette = {
+export type Miette = {
   libelle: string;
   href?: string;
 };
