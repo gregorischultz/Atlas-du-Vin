@@ -23,16 +23,16 @@ const jetbrainsMono = JetBrains_Mono({
   display: "swap",
 });
 
-import { SITE_URL, SITE_BASELINE } from "@/lib/site";
+import { SITE_URL, SITE_NOM, SITE_BASELINE } from "@/lib/site";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
-  title: `Carafe — ${SITE_BASELINE}`,
+  title: `${SITE_NOM} — ${SITE_BASELINE}`,
   description:
-    "Guide éditorial pour choisir une bouteille concrète en moins de deux minutes : par plat, par budget ou par type de vin.",
+    "Atlas éditorial du vin : classements, grandes régions, cépages et vocabulaire pour comprendre et choisir une bouteille.",
   openGraph: {
-    title: `Carafe — ${SITE_BASELINE}`,
-    siteName: "Carafe",
+    title: `${SITE_NOM} — ${SITE_BASELINE}`,
+    siteName: SITE_NOM,
     locale: "fr_FR",
     type: "website",
   },

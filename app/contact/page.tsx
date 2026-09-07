@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import { PageLegale } from "@/components/PageLegale";
 
 export const metadata: Metadata = {
-  title: "Contact — Carafe",
-  description: "Contacter l'équipe éditoriale de Carafe.",
+  title: "Contact — Atlas du Vin",
+  description: "Contacter l'équipe éditoriale de Atlas du Vin.",
 };
 
 export default function Contact() {

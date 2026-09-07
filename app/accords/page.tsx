@@ -5,7 +5,7 @@ import { FilDAriane } from "@/components/FilDAriane";
 import { Carte } from "@/components/Carte";
 
 export const metadata: Metadata = {
-  title: "Accords mets & vins — Carafe",
+  title: "Accords mets & vins — Atlas du Vin",
   description:
     "Quel vin pour quel plat ? Nos accords, une réponse claire plutôt qu'une liste.",
 };

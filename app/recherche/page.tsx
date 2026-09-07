@@ -4,7 +4,7 @@ import { RechercheClient } from "@/components/RechercheClient";
 import { FilDAriane } from "@/components/FilDAriane";
 
 export const metadata: Metadata = {
-  title: "Recherche — Carafe",
+  title: "Recherche — Atlas du Vin",
   description: "Cherchez un vin, un cépage, un plat ou un type de vin.",
 };
 

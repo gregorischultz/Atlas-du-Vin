@@ -32,7 +32,7 @@ export async function generateMetadata({
   const vin = vinClasseParSlug(slug);
   if (!vin) return {};
   return {
-    title: `${vin.nom} — Carafe`,
+    title: `${vin.nom} — Atlas du Vin`,
     description: vin.resume,
     alternates: { canonical: `/vin/${vin.slug}` },
   };

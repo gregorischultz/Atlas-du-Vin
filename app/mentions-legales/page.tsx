@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import { PageLegale } from "@/components/PageLegale";
 
 export const metadata: Metadata = {
-  title: "Mentions légales — Carafe",
-  description: "Éditeur, hébergeur et informations légales du site Carafe.",
+  title: "Mentions légales — Atlas du Vin",
+  description: "Éditeur, hébergeur et informations légales du site Atlas du Vin.",
 };
 
 export default function MentionsLegales() {

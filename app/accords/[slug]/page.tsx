@@ -24,7 +24,7 @@ export async function generateMetadata({
   if (!resultat) return {};
   const { aliment, vins } = resultat;
   return {
-    title: `Quel vin pour ${aliment.libelle_fr.toLowerCase()} ? — Carafe`,
+    title: `Quel vin pour ${aliment.libelle_fr.toLowerCase()} ? — Atlas du Vin`,
     description: aliment.explication_fr,
     alternates: { canonical: `/accords/${slug}` },
     // secção 11 : une page d'accord avec moins de 3 vins éligibles reste noindex

@@ -2,16 +2,16 @@ import type { Metadata } from "next";
 import { PageLegale } from "@/components/PageLegale";
 
 export const metadata: Metadata = {
-  title: "Divulgation d'affiliation — Carafe",
+  title: "Divulgation d'affiliation — Atlas du Vin",
   description:
-    "Comment Carafe se rémunère et pourquoi cela n'influence pas nos notes.",
+    "Comment Atlas du Vin se rémunère et pourquoi cela n'influence pas nos notes.",
 };
 
 export default function DivulgationAffiliation() {
   return (
     <PageLegale titre="Divulgation d'affiliation">
       <p>
-        Carafe peut proposer des liens vers des marchands. Lorsque vous achetez
+        Atlas du Vin peut proposer des liens vers des marchands. Lorsque vous achetez
         via l&apos;un de ces liens, nous pouvons percevoir une commission, sans
         aucun surcoût pour vous.
       </p>

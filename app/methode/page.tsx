@@ -5,7 +5,7 @@ import { Tableau } from "@/components/Tableau";
 import { POIDS_PRIX, POIDS_QUALITE } from "@/lib/qualite-prix";
 
 export const metadata: Metadata = {
-  title: "Notre méthode — Carafe",
+  title: "Notre méthode — Atlas du Vin",
   description:
     "Comment nous notons les vins : rapport qualité-prix, barème et transparence.",
 };

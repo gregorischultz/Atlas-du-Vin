@@ -3,7 +3,7 @@ import { PageLegale } from "@/components/PageLegale";
 import { Tableau } from "@/components/Tableau";
 
 export const metadata: Metadata = {
-  title: "Cookies — Carafe",
+  title: "Cookies — Atlas du Vin",
   description: "Les cookies utilisés par le site et comment les gérer.",
 };
 
@@ -11,7 +11,7 @@ export default function Cookies() {
   return (
     <PageLegale titre="Gestion des cookies">
       <p>
-        Un cookie est un petit fichier déposé sur votre appareil. Carafe
+        Un cookie est un petit fichier déposé sur votre appareil. Atlas du Vin
         n&apos;utilise, à ce jour, que des cookies techniques indispensables.
       </p>
 

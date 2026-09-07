@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { SITE_NOM } from "@/lib/site";
 
 const liens = [
   { href: "/vins/rouge-sec", libelle: "Vins" },
@@ -15,7 +16,7 @@ export function EnTete() {
     <header className="border-b border-trait bg-craie/90 backdrop-blur-sm">
       <div className="contenu flex items-center justify-between py-4">
         <Link href="/" className="font-titres text-2xl text-lie">
-          Carafe
+          {SITE_NOM}
         </Link>
         <nav className="flex gap-6 font-corps text-base">
           {liens.map((lien) => (

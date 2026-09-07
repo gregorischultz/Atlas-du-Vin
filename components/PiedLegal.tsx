@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { BlocSanitaire } from "@/components/BlocSanitaire";
 import { LienGererCookies } from "@/components/LienGererCookies";
+import { SITE_NOM, SITE_BASELINE } from "@/lib/site";
 
 const liensLegaux = [
   { href: "/mentions-legales", libelle: "Mentions légales" },
@@ -35,8 +36,7 @@ export function PiedLegal() {
           <LienGererCookies />
         </nav>
         <p className="mt-6 font-donnees text-xs text-encre-doux">
-          © {new Date().getFullYear()} Carafe — La bonne bouteille, sans se
-          tromper.
+          © {new Date().getFullYear()} {SITE_NOM} — {SITE_BASELINE}
         </p>
       </div>
     </footer>

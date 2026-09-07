@@ -22,7 +22,7 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { type } = await params;
   return {
-    title: `${libelleType(type)} — le classement — Carafe`,
+    title: `${libelleType(type)} — le classement — Atlas du Vin`,
     description: `Notre sélection de ${libelleType(type).toLowerCase()}, classée par rapport qualité-prix.`,
     alternates: { canonical: `/vins/${type}` },
   };
@@ -41,7 +41,7 @@ export default async function PageType({
   const itemList = {
     "@context": "https://schema.org",
     "@type": "ItemList",
-    name: `${libelleType(type)} — classement Carafe`,
+    name: `${libelleType(type)} — classement Atlas du Vin`,
     itemListElement: vins.map((v, i) => ({
       "@type": "ListItem",
       position: i + 1,

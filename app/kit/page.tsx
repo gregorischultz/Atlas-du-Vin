@@ -7,7 +7,7 @@ import { FilDAriane } from "@/components/FilDAriane";
 import { Tableau } from "@/components/Tableau";
 
 export const metadata: Metadata = {
-  title: "Kit — Carafe",
+  title: "Kit — Atlas du Vin",
   description: "Système de design : couleurs, typographie, composants.",
 };
 
@@ -56,7 +56,7 @@ export default function KitPage() {
 
       <h1 className="mt-6 text-4xl">Système de design</h1>
       <p className="mt-3 max-w-[68ch] text-encre-doux">
-        Les briques visuelles de Carafe. Système fermé : ni couleur ni police en
+        Les briques visuelles de Atlas du Vin. Système fermé : ni couleur ni police en
         dehors de cette page.
       </p>
 

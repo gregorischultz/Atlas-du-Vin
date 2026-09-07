@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { PageLegale } from "@/components/PageLegale";
 
 export const metadata: Metadata = {
-  title: "Politique de confidentialité — Carafe",
+  title: "Politique de confidentialité — Atlas du Vin",
   description: "Comment nous traitons vos données personnelles.",
 };
 
@@ -11,7 +11,7 @@ export default function Confidentialite() {
     <PageLegale titre="Politique de confidentialité">
       <p>
         Cette politique explique quelles données sont traitées lorsque vous
-        consultez Carafe, conformément au Règlement général sur la protection des
+        consultez Atlas du Vin, conformément au Règlement général sur la protection des
         données (RGPD).
       </p>
 

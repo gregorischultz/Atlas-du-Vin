@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { SITE_NOM } from "@/lib/site";
 
 const COOKIE = "carafe_majeur";
 
@@ -29,7 +30,7 @@ export function BarriereAge() {
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-encre/80 p-6">
       <div className="max-w-md rounded-carafe border border-trait bg-papier p-8 text-center">
-        <p className="font-titres text-2xl text-lie">Carafe</p>
+        <p className="font-titres text-2xl text-lie">{SITE_NOM}</p>
         <h2 className="mt-4 text-xl">Avez-vous 18 ans ou plus ?</h2>
         <p className="mt-3 text-sm text-encre-doux">
           Ce site présente des vins. Sa consultation est réservée aux personnes
