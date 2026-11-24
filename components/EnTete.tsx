@@ -11,7 +11,7 @@ const arbre: ArbreMenu = {
   guide: [
     { href: "/histoire", libelle: "Histoire du Vin" },
     { href: "/pays", libelle: "Top 5 des pays" },
-    { href: "/experts", libelle: "Les 10 experts" },
+    { href: "/experts", libelle: "Les 20 experts" },
     { href: "/classement-mondial", libelle: "Top 10 mondial" },
     { href: "/types", libelle: "Les 6 types de vin" },
     { href: "/glossaire", libelle: "Termes techniques" },

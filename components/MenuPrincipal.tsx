@@ -64,7 +64,7 @@ export function MenuPrincipal({ arbre }: { arbre: ArbreMenu }) {
           <div className="sticky top-0 border-b border-trait bg-craie/85 backdrop-blur-md">
             <div className="contenu flex items-center justify-between py-4">
               <span className="font-titres text-2xl tracking-tight text-lie">
-                Atlas du Vin
+                Atlas du Vin 
               </span>
               <button
                 type="button"
@@ -72,7 +72,7 @@ export function MenuPrincipal({ arbre }: { arbre: ArbreMenu }) {
                 aria-label="Fermer le menu"
                 className="font-donnees text-sm uppercase tracking-widest text-encre hover:text-lie"
               >
-                Fermer ✕
+                Fermer 
               </button>
             </div>
           </div>
